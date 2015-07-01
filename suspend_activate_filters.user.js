@@ -100,7 +100,6 @@ function wrapper(plugin_info) {
                         var tclabel = $.trim($(clabel).text());
                         var cboxsts = $(cbox).is(':checked') ? true : false;
                         if (window.plugin.suspendfilters.filtersObj[window.plugin.suspendfilters.KEY_STORAGE_NAME].maps[tclabel] != cboxsts) {
-                            console.log('Click map ' + cboxsts);
                                 $(cbox).click();
                         }
                 });
