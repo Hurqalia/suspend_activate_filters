@@ -3,12 +3,12 @@
 // @name           IITC plugin: Suspend or activate all filters.
 // @author         hurqalia22
 // @category       Info
-// @version        0.1.7.20150408.007
+// @version        0.1.8.20151007.001
 // @namespace      https://github.com/Hurqalia/suspend_activate_filters
 // @updateURL      https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.meta.js
 // @downloadURL    https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.user.js
 // @installURL     https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.user.js
-// @description    [hurqalia22-2015-04-28-007] Suspend or activate all filters.
+// @description    [hurqalia22-2015-10-08-001] Suspend or activate all filters.
 // @include        https://www.ingress.com/intel*
 // @include        http://www.ingress.com/intel*
 // @match          https://www.ingress.com/intel*
@@ -19,7 +19,7 @@
 function wrapper(plugin_info) {
         if(typeof window.plugin !== 'function') window.plugin = function() {};
         plugin_info.buildName = 'hurqalia22';
-        plugin_info.dateTimeVersion = '20150408.007';
+        plugin_info.dateTimeVersion = '20151007.001';
         plugin_info.pluginId = 'suspendfilters';
 
         // PLUGIN START ////////////////////////////////////////////////////////
@@ -64,11 +64,16 @@ function wrapper(plugin_info) {
             var listfilters     = {};
             listfilters.filters = {};
             listfilters.maps    = {};
+            var reswueReg = /.*\s(Main Portals|Main Links|Main Polys|Alerts|Agent Tracker|Layer [A-F] \w+)/; 
             
                 $('.leaflet-control-layers-overlays > label').each(function() {
                         var cbox   = $(this).find('input');
                         var clabel = $(this).find('span');
                         var tclabel = $.trim($(clabel).text());
+                        if (reswueReg.test(tclabel)) {
+                                var rtclabel = reswueReg.exec(tclabel);
+                                tclabel = rtclabel[1];
+                        }
                         listfilters.filters[tclabel] = $(cbox).is(':checked') ? true : false;
                 });
 
@@ -85,10 +90,15 @@ function wrapper(plugin_info) {
 
         // set preset
         window.plugin.suspendfilters.setPreset = function() {
+                var reswueReg = /.*\s(Main Portals|Main Links|Main Polys|Alerts|Agent Tracker|Layer [A-F] \w+)/;
                 $('.leaflet-control-layers-overlays > label').each(function() {
                         var cbox    = $(this).find('input');
                         var clabel  = $(this).find('span');
                         var tclabel = $.trim($(clabel).text());
+                        if (reswueReg.test(tclabel)) {
+                                var rtclabel = reswueReg.exec(tclabel);
+                                tclabel = rtclabel[1];
+                        }
                         var cboxsts = $(cbox).is(':checked') ? true : false;
                         if (window.plugin.suspendfilters.filtersObj[window.plugin.suspendfilters.KEY_STORAGE_NAME].filters[tclabel] != cboxsts) {
                                 $(cbox).click();
