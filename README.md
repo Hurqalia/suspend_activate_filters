@@ -1,6 +1,7 @@
-# Suspend Activate Filters
+# Suspend Activate Filters (iitc)
 
-Save a group of filters in a preset and activate (or suspend) it when you need in one click.
+
+Save a group of filters in a preset and activate (or suspend) it when you need with one click.
 
 --
 
