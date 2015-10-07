@@ -1,4 +1,4 @@
-# suspend_activate_filters
+# Suspend Activate Filters
 
 Save a group of filters in a preset and activate (or suspend) it when you need in one click.
 
