@@ -1,4 +1,4 @@
-# Suspend Activate Filters (iitc)
+# IITC plugin : Suspend Activate Filters
 
 
 Save a group of filters in a preset and activate (or suspend) it when you need with one click.
