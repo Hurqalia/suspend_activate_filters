@@ -8,14 +8,14 @@
 // @updateURL      https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.meta.js
 // @downloadURL    https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.user.js
 // @installURL     https://github.com/Hurqalia/suspend_activate_filters/raw/master/suspend_activate_filters.user.js
-// @description    [hurqalia22-2015-10-07-001] Suspend or activate all filters.
+// @description    [hurqalia22-2015-10-08-001] Suspend or activate all filters.
+// @include        https://ingress.com/intel*
+// @include        http://ingress.com/intel*
 // @include        https://*.ingress.com/intel*
 // @include        http://*.ingress.com/intel*
+// @include        https://intel.ingress.com/*
+// @match          https://intel.ingress.com/*
 // @match          https://*.ingress.com/intel*
 // @match          http://*.ingress.com/intel*
-// @include        https://*.ingress.com/mission/*
-// @include        http://*.ingress.com/mission/*
-// @match          https://*.ingress.com/mission/*
-// @match          http://*.ingress.com/mission/*
 // @grant          none
 // ==/UserScript==
